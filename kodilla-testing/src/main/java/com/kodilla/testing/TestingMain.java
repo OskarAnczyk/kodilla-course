@@ -25,7 +25,7 @@ public class TestingMain {
             System.out.println("addition is not correct");
         }
 
-        if(a - b == calculator.substract(a,b)){
+        if(a - b == calculator.subtract(a,b)){
             System.out.println("substraction is correct");
         } else {
             System.out.println("substraction is not correct");
