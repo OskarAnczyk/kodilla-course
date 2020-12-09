@@ -10,22 +10,36 @@ public class ShapeCollector {
         list.add(shape);
     }
 
-    public void removeFigure(Shape shape){
-        list.remove(shape);
+    public boolean removeFigure(Shape shape){
+        boolean result = false;
+        if (list.contains(shape)) {
+            list.remove(shape);
+            result = true;
+        }
+        return result;
     }
 
     public Shape getFigure(int n){
-        return list.get(n);
+        if(n >= 0 && n < list.size()){
+            return list.get(n);
+        }
+        return null;
     }
 
-    public void showFigures(){
+    public String showFigures(){
         String shapes = "";
 
         for(Shape shape : list){
             shapes += shape.getShapeName() + ", ";
         }
 
-        shapes.substring(0,shapes.length() - 2);
-        System.out.println(shapes);
+        if(shapes.length() > 2){
+            shapes = shapes.substring(0,shapes.length() - 2);
+        }
+        return shapes;
+    }
+
+    public int getListSize(){
+        return this.list.size();
     }
 }
