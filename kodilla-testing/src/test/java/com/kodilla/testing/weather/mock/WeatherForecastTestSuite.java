@@ -51,13 +51,7 @@ public class WeatherForecastTestSuite {
         //Given
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double expected = 0;
-        int counter = 0;
-        for(Map.Entry<String,Double> entry: temperaturesMap.entrySet()){
-            counter++;
-            expected += entry.getValue();
-        }
-        expected /= counter;
+        double expected = 25.56;
         //When
         double result = weatherForecast.calculateAverageTemperature();
         //Then
