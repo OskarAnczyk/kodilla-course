@@ -37,20 +37,21 @@ public class LibraryUser {
         this.peselId = peselId;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         LibraryUser that = (LibraryUser) o;
-
-        if (!firstname.equals(that.firstname)) return false;
-        if (!lastname.equals(that.lastname)) return false;
-        return peselId.equals(that.peselId);
+        return Objects.equals(getFirstname(), that.getFirstname()) &&
+                Objects.equals(getLastname(), that.getLastname()) &&
+                Objects.equals(getPeselId(), that.getPeselId());
     }
+
 
     @Override
     public int hashCode() {
         return Objects.hash(firstname, lastname, peselId);
     }
+
 }

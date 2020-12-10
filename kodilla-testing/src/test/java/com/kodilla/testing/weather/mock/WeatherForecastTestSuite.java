@@ -19,13 +19,13 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class WeatherForecastTestSuite {
-    private static Map<String,Double> temperaturesMap = new HashMap<>();
+    private static Map<String, Double> temperaturesMap = new HashMap<>();
 
     @Mock
     private Temperatures temperaturesMock;
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         temperaturesMap.put("Rzeszow", 25.5);
         temperaturesMap.put("Krakow", 26.2);
         temperaturesMap.put("Wroclaw", 24.8);
@@ -47,26 +47,26 @@ public class WeatherForecastTestSuite {
     }
 
     @Test
-    void testCalculateAverageTemperature(){
+    void testCalculateAverageTemperature() {
         //Given
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double expected = 25.56;
         //When
         double result = weatherForecast.calculateAverageTemperature();
         //Then
-        Assertions.assertEquals(expected,result);
+        double expected = 25.56;
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
-    void testCalculateMedianTemperature(){
+    void testCalculateMedianTemperature() {
         //Given
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double expected = 25.5;
         //When
         double result = weatherForecast.calculateMedianTemperature();
         //Then
-        Assertions.assertEquals(expected,result);
+        double expected = 25.5;
+        Assertions.assertEquals(expected, result);
     }
 }

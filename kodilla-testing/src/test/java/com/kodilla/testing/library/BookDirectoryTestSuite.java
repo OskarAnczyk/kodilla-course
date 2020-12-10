@@ -9,6 +9,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -81,44 +83,44 @@ public class BookDirectoryTestSuite {
 
     @Nested
     @DisplayName("Testing listBooksInHandsOf")
-    class TestBooksInHandsOf{
+    class TestBooksInHandsOf {
         @Test
-        void testListBooksInHandsOf0(){
+        void testListBooksInHandsOf0() {
             //Given
             BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-            LibraryUser libraryUser = new LibraryUser("Name","Surname","1200");
+            LibraryUser libraryUser = new LibraryUser("Name", "Surname", "1200");
             //When
             List<Book> theListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser);
             //Then
-            assertEquals(0,theListOfBooks0.size());
+            assertEquals(0, theListOfBooks0.size());
         }
 
         @Test
-        void testListBookInHandsOf1(){
+        void testListBookInHandsOf1() {
             //Given
             BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-            LibraryUser libraryUser = new LibraryUser("Name","Surname","1200");
+            LibraryUser libraryUser = new LibraryUser("Name", "Surname", "1200");
             List<Book> listOfBooks1 = generateListOfNBooks(1);
             when(libraryDatabaseMock.listBooksInHandsOf(libraryUser))
                     .thenReturn(listOfBooks1);
             //When
             List<Book> resultList = bookLibrary.listBooksInHandsOf(libraryUser);
             //Then
-            assertEquals(1,resultList.size());
+            assertEquals(1, resultList.size());
         }
 
         @Test
-        void testListBookInHandsOf5(){
+        void testListBookInHandsOf5() {
             //Given
             BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-            LibraryUser libraryUser = new LibraryUser("Name","Surname","1200");
+            LibraryUser libraryUser = new LibraryUser("Name", "Surname", "1200");
             List<Book> listOfBooks5 = generateListOfNBooks(5);
             when(libraryDatabaseMock.listBooksInHandsOf(libraryUser))
                     .thenReturn(listOfBooks5);
             //When
             List<Book> resultList = bookLibrary.listBooksInHandsOf(libraryUser);
             //Then
-            assertEquals(5,resultList.size());
+            assertEquals(5, resultList.size());
         }
     }
 
@@ -129,5 +131,8 @@ public class BookDirectoryTestSuite {
             resultList.add(theBook);
         }
         return resultList;
+        /*return IntStream.range(1, booksQuantity + 1)
+                .mapToObj(n -> new Book("Title" + n, "Author" + n, 1970 + n))
+                .collect(Collectors.toList());*/
     }
 }
