@@ -64,7 +64,7 @@ public class ForumStatistics {
         if(getNumberOfPosts() > 0){
             int a = getNumberOfComments();
             int b = getNumberOfPosts();
-            setAverageOfPostComments(a/b);
+            setAverageOfPostComments((double) a/b);
         }else {
             setAverageOfPostComments(0);
         }
@@ -74,9 +74,9 @@ public class ForumStatistics {
             int b = getNumberOfComments();
             int c = getNumberOfPosts();
 
-            setAverageOfUserComments(b/a);
+            setAverageOfUserComments((double) b/a);
 
-            setAverageOfUserPosts(c/a);
+            setAverageOfUserPosts((double) c/a);
         } else {
             setAverageOfUserComments(0);
             setAverageOfUserPosts(0);
