@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.shape.ShapeCollectorTestSuite$TestShowing" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-16T07:45:57" hostname="DESKTOP-0SJISNL" time="0.016">
+  <properties/>
+  <testcase name="testShowFigures()" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite$TestShowing" time="0.014"/>
+  <testcase name="testShowFiguresWithEmpty()" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite$TestShowing" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-09T08:35:53" hostname="DESKTOP-0SJISNL" time="0.023">
+<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="DESKTOP-0SJISNL" time="0.0">
   <properties/>
-  <testcase name="testCaseUsername()" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.023"/>
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[This is the beginning of tests.
+All tests are finished.
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
