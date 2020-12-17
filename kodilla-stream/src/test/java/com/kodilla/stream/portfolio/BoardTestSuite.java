@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.time.temporal.ChronoUnit;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.*;
@@ -83,25 +81,21 @@ public class BoardTestSuite {
     }
 
     @Test
-    public void testAddTaskListAverageWorkingOnTask(){
+    public void testAddTaskListAverageWorkingOnTask() {
         //Given
         Board project = prepareTestData();
 
         //When
-        List<TaskList> inProgressTasks = new ArrayList<>();
-        inProgressTasks.add(new TaskList("In progress"));
-        List<Integer> integersList = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
+        double result = project.getTaskLists().stream()
+                .filter(taskList -> taskList.getName().equals("In progress"))
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(d -> (int) ChronoUnit.DAYS.between(d.getCreated(),d.getDeadline()))
-                .collect(toList());
+                .mapToInt(d -> (int) ChronoUnit.DAYS.between(d.getCreated(), d.getDeadline()))
+                .average()
+                .orElse(0);
 
-        OptionalDouble result = IntStream.range(0,integersList.size())
-                .map(n -> integersList.get(n))
-                .average();
         //Then
-        double expected = (double) 55 / 3;
-        assertEquals(expected,result.getAsDouble(),0.0001);
+        double expected = 18.33;
+        assertEquals(expected, result, 0.01);
     }
 
     private Board prepareTestData() {

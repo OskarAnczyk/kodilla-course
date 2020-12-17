@@ -14,9 +14,9 @@ public class WorldTestSuite {
         World world = new World();
         Continent continent1 = new Continent();
         Continent continent2 = new Continent();
-        Country country1 = new Country();
-        Country country2 = new Country();
-        Country country3 = new Country();
+        Country country1 = new Country(new BigDecimal("10000000"));
+        Country country2 = new Country(new BigDecimal("10000000"));
+        Country country3 = new Country(new BigDecimal("10000000"));
         continent1.add(country1);
         continent1.add(country2);
         continent2.add(country3);
