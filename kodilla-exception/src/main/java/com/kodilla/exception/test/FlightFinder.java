@@ -4,16 +4,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightFinder {
-    public void findFlight(Flight flight) throws RouteNotFoundException{
-        Map<String,Boolean> airports = new HashMap<>();
-        if(airports.containsKey(flight.getArrivalAirport())){
-            if(airports.get(flight.getArrivalAirport())){
-                System.out.println("Flight available");
-            } else {
-                System.out.println("Flight not available");
-            }
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
+        Map<String, Boolean> airports = new HashMap<>();
+
+        if (airports.containsKey(flight.getArrivalAirport())) {
+            return airports.get(flight.getArrivalAirport());
         } else {
             throw new RouteNotFoundException();
         }
     }
+
+    public boolean findFlight2(Flight flight) throws RouteNotFoundException {
+        Map<String, Boolean> airports = new HashMap<>();
+
+        Boolean result = airports.get(flight.getArrivalAirport());
+
+        if (result == null) {
+            throw new RouteNotFoundException();
+        }
+
+        return result;
+    }
+
 }

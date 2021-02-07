@@ -7,7 +7,7 @@ public class ExceptionHandling {
         double y = 2.5;
         String result = "Not done";
 
-        try{
+        try {
             result = secondChallenge.probablyIWillThrowException(x,y);
         } catch(Exception e) {
             System.out.println("Something went wrong: " + e);
