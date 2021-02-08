@@ -13,7 +13,7 @@ public class ProductOrderService {
     }
 
     public BuyDto process(final BuyRequest buyRequest){
-        boolean isBought = buyService.buy(buyRequest.getUser(),buyRequest.getFrom(),buyRequest.getTo());
+        boolean isBought = buyService.buy(buyRequest);
 
         if(isBought){
             informationService.inform(buyRequest.getUser());

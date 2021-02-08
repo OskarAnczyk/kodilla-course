@@ -1,5 +1,5 @@
 package com.kodilla.good.patterns.food;
 
-public interface ProducentOrderService {
+public interface FoodSupplier {
     boolean process(OrderRequest orderRequest);
 }

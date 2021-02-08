@@ -4,10 +4,10 @@ import java.time.LocalDateTime;
 
 public class GoodPatternChallengesMain {
     public static void main(String[] args){
-        /*
-        MovieStore movieStore = new MovieStore();
-        movieStore.showAllMovies();
-        */
+
+//        MovieStore movieStore = new MovieStore();
+//        movieStore.showAllMovies();
+
 
         InformUser informUser = new InformUser();
         FakeDatabase fakeDatabase = new FakeDatabase();
