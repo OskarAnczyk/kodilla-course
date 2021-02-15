@@ -1,11 +1,7 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.8.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
-group 'com.kodilla'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -19,7 +15,5 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform();
+    useJUnitPlatform()
 }
-
-bootJar { enabled = false}
