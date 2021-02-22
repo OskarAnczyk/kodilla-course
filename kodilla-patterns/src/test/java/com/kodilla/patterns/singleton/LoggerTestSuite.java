@@ -18,7 +18,7 @@ public class LoggerTestSuite {
     }
 
     @Test
-    void ModifyLog(){
+    void testModifyLog(){
         //Given
         Logger logger = Logger.ONLY_LOGGER;
         logger.log("log1");
