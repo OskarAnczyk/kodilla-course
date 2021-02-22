@@ -20,8 +20,8 @@ public class LibraryTestSuite {
         library.getBooks().add(book1);
         library.getBooks().add(book2);
         library.getBooks().add(book3);
-        Library library1 = new Library("library1");
-        Library library2 = new Library("library2");
+        Library library1 = null;
+        Library library2 = null;
         //When
         try{
             library1 = library.shallowCopy();
@@ -40,5 +40,11 @@ public class LibraryTestSuite {
         //Then
         assertEquals(library.getBooks().size(),library1.getBooks().size());
         assertFalse(library.getBooks().size() == library2.getBooks().size());
+
+        for (Book book : library.getBooks()) {
+            book.setAuthor("kafjsagfuysgafbyasf");
+        }
+        System.out.println(library.getBooks());
+        System.out.println(library2.getBooks());
     }
 }
